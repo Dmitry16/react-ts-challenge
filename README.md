@@ -1,50 +1,29 @@
-# React + TypeScript + Vite
+# React + TypeScript Coding Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Part 1: Implement functionality to render list of users
 
-Currently, two official plugins are available:
+1. Implement basic functionality to render a list of users.
+2. On a list item (user) click fetch the selected user's todos, count completed, uncompleted todos and render selected user's name, phone and numbers of completed and uncompleted todos.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+End-point to fetch users: `https://jsonplaceholder.typicode.com/users`
+End-point to fetch user's todos: `https://jsonplaceholder.typicode.com/users/${selectedUser.id}/todos`
 
-## Expanding the ESLint configuration
+## Part 2: Extend functionality adding possibility to display posts and photos of the selected user
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+End-point for posts: `https://jsonplaceholder.typicode.com/users/${selectedUser.id}/posts`
+End-point for photos: `https://jsonplaceholder.typicode.com/users/${selectedUser.id}/albums`, `https://jsonplaceholder.typicode.com/albums/1/photos`
 
-- Configure the top-level `parserOptions` property like this:
+1. Add buttons "Show Posts" and "Show Photos". On a button click render Posts or Photos in a new page.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Routing
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+1. Add a basic Router.
+2. Add 3 pages with routing logic: Home (for the first list of users), User's Posts and User's Photos.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### State management
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+Implement basic state management logic with useContext, useState and useReducer hooks.
+
+### Unit tests
+
+Add unit tests.

@@ -10,6 +10,7 @@ const Posts = () => {
 
   return (
     <div>
+      <Link to="/">Back to Home</Link>
       <h1>Posts by {state.selectedUser.name}</h1>
       <ul>
         {state.posts.length > 0 ? (

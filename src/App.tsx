@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react'
-import './App.css'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { UserProvider } from "./hooks/useUser";
+import Home from "./pages/Home";
+import Posts from "./pages/Posts";
+import Photos from "./pages/Photos";
 
-// Implement a simple user list application using React and TypeScript.
-function App() {
+const App = () => {
   return (
-    <>
-      <h1>React + TypeScript</h1>
-      <h2>Coding challenge</h2>
-      <h3>List of Users</h3>
-      {/*  
-        Add your code here to display a list of users.
-      */}
-    </>
-  )
-}
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/posts" element={<Posts />} />
+          <Route path="/photos" element={<Photos />} />
+        </Routes>
+      </Router>
+    </UserProvider>
+  );
+};
 
-export default App
+export default App;

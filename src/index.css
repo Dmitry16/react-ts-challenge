@@ -54,6 +54,34 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+div.content,
+div.user-info {
+  display: flex;
+  flex-direction: row;
+  gap: 5vw;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.links a {
+  font-size: 1.2em;
+  padding: 0.5em 1em;
+  border-radius: 8px;
+  background-color: #646cff;
+  color: #fafafa;
+  transition: background-color 0.25s;
+  border: 2px solid #646cff;
+}
+
+.links a:hover {
+  color: #646cff;
+  background-color: #fafafa;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
